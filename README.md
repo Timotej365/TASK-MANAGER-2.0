@@ -31,14 +31,47 @@ Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú ap
 
 ```bash
 python task_manager_1_1.py
-➡️ Aplikácia vytvorí MySQL databázu a tabuľku s názvom task_manager_1_1.
--Spusti Flask API python - API.py
--API beží na http://127.0.0.1:5000
+```
 
-API Endpointy
+➡️ Aplikácia vytvorí MySQL databázu a tabuľku s názvom `task_manager_1_1`.
 
-Metóda | Endpoint | Popis
-GET | /tasks | Získať všetky aktívne úlohy
-POST | /tasks | Pridať novú úlohu
-PUT | /tasks/<id> | Aktualizovať stav úlohy
-DELETE | /tasks/<id> | Odstrániť úlohu podľa ID
+### 2. Spusti Flask API
+
+```bash
+python API.py
+```
+
+➡️ API beží na `http://127.0.0.1:5000`
+
+---
+
+## 📬 API Endpointy
+
+| Metóda | Endpoint       | Popis                         |
+|--------|----------------|-------------------------------|
+| GET    | /tasks         | Získať všetky aktívne úlohy   |
+| POST   | /tasks         | Pridať novú úlohu              |
+| PUT    | /tasks/<id>    | Aktualizovať stav úlohy        |
+| DELETE | /tasks/<id>    | Odstrániť úlohu podľa ID       |
+
+---
+
+## 🔍 Testovanie
+
+- **Manuálne testovanie**: prebehlo na konzolovej aj API úrovni
+- **Postman kolekcia**: vytvorená a uložená (môže byť súčasť repozitára)
+- **Pytest testy**: budú doplnené po výuke na kurze
+- **Playwright**: plánované pre webové E2E testy po doplnení React frontendu
+
+---
+
+## 📌 Poznámka
+
+Tento projekt je súčasťou širšieho portfólia QA/testerských projektov.  
+Pre viac informácií navštív [hlavný rozcestník portfólia](https://github.com/Timotej365/TESTER-PORTFOLIO-ROZCESTNIK).
+
+---
+
+## 👨‍💻 Autor
+
+Timotej – junior QA tester & Python developer
