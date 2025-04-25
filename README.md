@@ -56,10 +56,25 @@ python API.py
 
 ---
 
+## 📦 Postman kolekcia
+
+Súbor `task_manager_2_0_api_collection.json` obsahuje testy všetkých CRUD operácií nad úlohami:
+- GET všetkých úloh
+- POST vytvorenie novej úlohy
+- PUT aktualizácia stavu
+- DELETE úlohy
+- GET neexistujúcej úlohy (negatívny scenár)
+
+Testy využívajú premenné a overujú odpovede API.
+
+👉 Kolekciu je možné importovať do Postmanu a spustiť ako ukážku testovania.
+
+---
+
 ## 🔍 Testovanie
 
 - **Manuálne testovanie**: prebehlo na konzolovej aj API úrovni
-- **Postman kolekcia**: vytvorená a uložená (môže byť súčasť repozitára)
+- **Postman kolekcia**: vytvorená a uložená v repozitári
 - **Pytest testy**: budú doplnené po výuke na kurze
 - **Playwright**: plánované pre webové E2E testy po doplnení React frontendu
 
