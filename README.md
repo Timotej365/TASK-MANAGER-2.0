@@ -35,6 +35,8 @@ python task_manager_1_1.py
 -Spusti Flask API python - API.py
 -API beží na http://127.0.0.1:5000
 
+API Endpointy
+
 Metóda | Endpoint | Popis
 GET | /tasks | Získať všetky aktívne úlohy
 POST | /tasks | Pridať novú úlohu
