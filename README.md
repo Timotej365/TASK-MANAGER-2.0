@@ -106,9 +106,7 @@ Testy využívajú premenné a overujú odpovede API.
 ## 📌 Poznámka
 Pre rýchle prezretie spustenia a používania aplikácie odporúčam prezrieť priloženú fotodokumentáciu.
 Snímky obrazovky z priebehu testovania a práce s aplikáciou nájdeš v priečinku:  
-📂 [priebeh spustenim a CRUD operaciami](priebeh spustenim a CRUD operaciami-foto)
-
-
+📁 [priebeh spustenim a CRUD operaciami-foto](https://github.com/Timotej365/TASK_MANAGER-2.0/tree/main/priebeh%20spustenim%20a%20CRUD%20operaciami-foto)
 Tento projekt je súčasťou širšieho portfólia QA/testerských projektov.  
 Pre viac informácií navštív [hlavný rozcestník portfólia](https://github.com/Timotej365/TESTER-PORTFOLIO-ROZCESTNIK).
 
