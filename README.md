@@ -115,4 +115,4 @@ Pre viac informácií navštív [hlavný rozcestník portfólia](https://github.
 
 ## 👨‍💻 Autor
 
-Timotej – junior QA tester & Python developer
+Timotej – junior software tester
