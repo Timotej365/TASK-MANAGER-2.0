@@ -1,6 +1,6 @@
 # 🗂 Task Manager 2.0
 
-Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú aplikáciu v Pythone s REST API postaveným vo Flasku a databázou MySQL. Projekt vznikol ako súčasť budovania portfólia QA testera a vývojára.
+Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú aplikáciu v Pythone s REST API postaveným vo Flasku, databázou MySQL a React frontendom. Projekt vznikol ako súčasť budovania portfólia QA testera a vývojára.
 
 ---
 
@@ -10,18 +10,20 @@ Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú ap
 - REST API (GET, POST, PUT, DELETE)
 - MySQL databáza: ukladanie a správa úloh
 - Konzolová aplikácia aj Flask API používajú tú istú databázu
+- React frontend: zobrazenie úloh podľa stavu, zmena stavu, mazanie
+- Jednoduché štýly pre lepšiu čitateľnosť a použiteľnosť
 
 ---
 
 ## ⚙️ Technológie
 
-- 🐍 Python 3.11
-- 🌐 Flask
-- 💾 MySQL (lokálne, automatické vytvorenie DB a tabuľky cez konzolovku)
-- 🧪 Postman (API testovanie)
-- 📋 Pytest (plánované)
-- 💻 React (plánované frontend UI)
-- 🧭 Playwright (plánované E2E testy frontendu)
+- Python 3.11
+- Flask
+- MySQL (lokálne, automatické vytvorenie DB a tabuľky cez konzolovku)
+- Postman (API testovanie)
+- Pytest (plánované)
+- React
+- Playwright (plánované E2E testy frontendu)
 
 ---
 
@@ -44,6 +46,16 @@ python API.py
 ➡️ API beží na `http://127.0.0.1:5000`
 
 ---
+
+➡️ Spusti React frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+➡️ Frontend bude dostupný na http://localhost:3000/.
 
 ## 📬 API Endpointy
 
