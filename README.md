@@ -105,6 +105,7 @@ Testy využívajú premenné a overujú odpovede API.
 
 ## 📌 Poznámka
 
+Pre rýchle prezretie spustenia a používania aplikácie odporúčam prezrieť priloženú fotodokumentáciu 
 Tento projekt je súčasťou širšieho portfólia QA/testerských projektov.  
 Pre viac informácií navštív [hlavný rozcestník portfólia](https://github.com/Timotej365/TESTER-PORTFOLIO-ROZCESTNIK).
 
