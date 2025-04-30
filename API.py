@@ -1,8 +1,11 @@
+# === API.py ===
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import mysql.connector
 from mysql.connector import Error
 
 app = Flask(__name__)
+CORS(app)
 
 # Funkcia na pripojenie k databáze
 def pripojenie_db():
@@ -18,18 +21,16 @@ def pripojenie_db():
         print("Chyba pri pripájaní k databáze:", e)
         return None
 
-# Získať všetky aktívne úlohy
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
     spojenie = pripojenie_db()
     cursor = spojenie.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM ulohy WHERE stav IN ('Nezahájená', 'Prebieha')")
+    cursor.execute("SELECT * FROM ulohy")
     ulohy = cursor.fetchall()
     cursor.close()
     spojenie.close()
     return jsonify(ulohy), 200
 
-# Získať konkrétnu úlohu
 @app.route('/tasks/<int:id>', methods=['GET'])
 def get_task(id):
     spojenie = pripojenie_db()
@@ -43,19 +44,17 @@ def get_task(id):
     else:
         return jsonify({"error": "Úloha neexistuje."}), 404
 
-# Pridať novú úlohu
 @app.route('/tasks', methods=['POST'])
 def add_task():
     data = request.get_json()
     nazov = data.get("nazov")
     popis = data.get("popis")
-
     if not nazov or not popis:
         return jsonify({"error": "Názov a popis sú povinné."}), 400
 
     spojenie = pripojenie_db()
     cursor = spojenie.cursor()
-    sql = "INSERT INTO ulohy (nazov, popis) VALUES (%s, %s)"
+    sql = "INSERT INTO ulohy (nazov, popis, stav) VALUES (%s, %s, 'Nezahájená')"
     cursor.execute(sql, (nazov, popis))
     spojenie.commit()
     nove_id = cursor.lastrowid
@@ -63,7 +62,6 @@ def add_task():
     spojenie.close()
     return jsonify({"message": "Úloha bola pridaná.", "id": nove_id}), 201
 
-# Aktualizovať stav úlohy
 @app.route('/tasks/<int:id>', methods=['PUT'])
 def update_task(id):
     data = request.get_json()
@@ -83,7 +81,6 @@ def update_task(id):
     spojenie.close()
     return jsonify({"message": f"Úloha {id} bola aktualizovaná na '{novy_stav}'."}), 200
 
-# Odstrániť úlohu
 @app.route('/tasks/<int:id>', methods=['DELETE'])
 def delete_task(id):
     spojenie = pripojenie_db()
@@ -98,6 +95,5 @@ def delete_task(id):
     spojenie.close()
     return jsonify({"message": f"Úloha {id} bola odstránená."}), 200
 
-# Spustiť server
 if __name__ == '__main__':
     app.run(debug=True)
