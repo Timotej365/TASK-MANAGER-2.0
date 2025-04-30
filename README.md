@@ -92,6 +92,17 @@ Testy využívajú premenné a overujú odpovede API.
 
 ---
 
+## 🖼️ Frontend
+- Frontend aplikácie je postavený v Reacte a umožňuje:
+- Zobrazenie úloh rozdelených podľa stavu: Nezahájená, Prebieha, Hotová
+- Pridávanie nových úloh
+- Zmenu stavu úloh
+- Mazanie úloh s potvrdením
+- Jednoduché štýly pre lepšiu čitateľnosť a použiteľnosť
+- Štýly sú definované v súbore App.css a importované v App.js.
+
+---
+
 ## 📌 Poznámka
 
 Tento projekt je súčasťou širšieho portfólia QA/testerských projektov.  
