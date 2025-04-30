@@ -1,6 +1,6 @@
 # 🗂 Task Manager 2.0
 
-Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú aplikáciu v Pythone s REST API postaveným vo Flasku, databázou MySQL a React frontendom. Projekt vznikol ako súčasť budovania portfólia QA testera a vývojára.
+Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú aplikáciu v Pythone s REST API postaveným vo Flasku, databázou MySQL a React frontendom. Projekt vznikol ako súčasť budovania portfólia QA testera.
 
 ---
 
