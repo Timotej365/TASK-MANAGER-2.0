@@ -1,0 +1,8 @@
+# Python cache a kompilované súbory
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pytest cache
+.pytest_cache/
