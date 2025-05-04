@@ -11,6 +11,7 @@ Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú ap
 - MySQL databáza: ukladanie a správa úloh
 - Konzolová aplikácia aj Flask API používajú tú istú databázu
 - React frontend: zobrazenie úloh podľa stavu, zmena stavu, mazanie
+- Automatické testy pomocou `pytest` (refaktorovaná aj konzolová verzia)
 - Jednoduché štýly pre lepšiu čitateľnosť a použiteľnosť
 
 ---
@@ -21,7 +22,7 @@ Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú ap
 - Flask
 - MySQL (lokálne, automatické vytvorenie DB a tabuľky cez konzolovku)
 - Postman (API testovanie)
-- Pytest (plánované)
+- Pytest (unit + mock testy)
 - React
 - Playwright (plánované E2E testy frontendu)
 
@@ -32,7 +33,7 @@ Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú ap
 ### 1. Spusti konzolovú aplikáciu
 
 ```bash
-python task_manager_1_1.py
+python src/task_manager_1_1_pre_mockup.py
 ```
 
 ➡️ Aplikácia vytvorí MySQL databázu a tabuľku s názvom `task_manager_1_1`.
@@ -83,13 +84,35 @@ Testy využívajú premenné a overujú odpovede API.
 
 ---
 
-## 🔍 Testovanie
+## 🧪 Testovanie
+✅ Automatické testy – pytest 
 
-- **Manuálne testovanie**: prebehlo na konzolovej aj API úrovni
-- **Postman kolekcia**: vytvorená a uložená v repozitári
-- **Pytest testy**: budú doplnené po výuke na kurze
-- **Playwright**: plánované pre webové E2E testy po doplnení React frontendu
+Projekt obsahuje dve testované verzie aplikácie:
 
+1. Refaktorovaná verzia (testovateľná bez input())
+- Zdrojový súbor: src/task_manager_refaktor.py
+
+- Testy: tests/unit/test_task_manager_refaktor.py
+
+- Testy pokrývajú CRUD operácie priamo nad databázou s validáciou vstupov.
+
+2. Konzolová verzia (mockované vstupy)
+- Zdrojový súbor: src/task_manager_1_1_pre_mockup.py
+
+- Testy: tests/unit/test_task_manager_mockup.py
+
+- Používa unittest.mock.patch() na simuláciu vstupov z konzoly (input()).
+
+▶️ Spustenie testov:
+Spusti všetky unit testy:
+```bash
+python -m pytest tests/unit/ -v
+```
+
+Spusti konkrétny test:
+```bash
+python -m pytest tests/unit/test_task_manager_refaktor.py -v
+```
 ---
 
 ## 🖼️ Frontend
@@ -100,6 +123,43 @@ Testy využívajú premenné a overujú odpovede API.
 - Mazanie úloh s potvrdením
 - Jednoduché štýly pre lepšiu čitateľnosť a použiteľnosť
 - Štýly sú definované v súbore App.css a importované v App.js.
+
+---
+
+## 📁 Štruktúra projektu
+
+<pre>
+task-manager-2.0/
+├── src/
+│   ├── task_manager_refaktor.py           # testovateľná verzia
+│   └── task_manager_1_1_pre_mockup.py     # konzolová verzia s input()
+│
+├── tests/
+│   ├── unit/
+│   │   ├── test_task_manager_refaktor.py  # testy bez input()
+│   │   └── test_task_manager_mockup.py    # testy s mockovaním input()
+│   │
+│   └── e2e/                                # (rezervované pre Playwright testy)
+│
+├── frontend/                              # React aplikácia
+│
+├── postman kolekcia a foto/               # Postman kolekcia + testovacie screenshoty
+│
+├── API.py
+├── README.md
+└── .gitignore
+</pre>
+
+---
+
+🔍 Manuálne testovanie
+- Konzolová verzia testovaná manuálne (CRUD cez terminál)
+
+- API testované manuálne cez Postman kolekciu
+
+- Automatické pytest testy pre backend (2 verzie)
+
+- E2E testovanie cez Playwright (pripravuje sa)
 
 ---
 
