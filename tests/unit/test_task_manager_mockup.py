@@ -26,16 +26,20 @@ def test_pridat_ulohu_ok():
 # TEST: Pridanie úlohy (negatívny scenár – prázdny názov)
 # -----------------------------
 def test_pridat_ulohu_neplatny_vstup():
-    with patch("builtins.input", side_effect=["", "Správny názov", "Správny popis"]):
+    with patch("builtins.input", side_effect=["", "", "Správny názov", "Popis pre test"]):
         pridat_ulohu(spojenie)
 
     kurzor = spojenie.cursor()
     kurzor.execute("SELECT * FROM ulohy WHERE nazov = %s", ("Správny názov",))
     vysledok = kurzor.fetchone()
     assert vysledok is not None
+
+    # Cleanup
     kurzor.execute("DELETE FROM ulohy WHERE nazov = %s", ("Správny názov",))
     spojenie.commit()
     kurzor.close()
+
+
 
 # -----------------------------
 # TEST: Aktualizácia úlohy (pozitívny scenár)
