@@ -36,3 +36,10 @@ Version 2.0 is an advanced task manager project that connects a console applicat
 python src/task_manager_1_1_pre_mockup.py
 ```
 
+➡️ The application will create a MySQL database and a table named `task_manager_1_1`.
+
+### 2. Run the Flask API
+
+```bash
+python API.py
+```
