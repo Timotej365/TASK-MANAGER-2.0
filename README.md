@@ -24,7 +24,7 @@ Verzia 2.0 je rozšírený projekt správcu úloh, ktorý prepája konzolovú ap
 - Postman (API testovanie)
 - Pytest (unit + mock testy)
 - React
-- Playwright (plánované E2E testy frontendu)
+- Playwright (plánované E2E testy frontendu v TM 2.1)
 
 ---
 
@@ -139,7 +139,7 @@ task-manager-2.0/
 │   │   ├── test_task_manager_refaktor.py  # testy bez input()
 │   │   └── test_task_manager_mockup.py    # testy s mockovaním input()
 │   │
-│   └── e2e/                                # (rezervované pre Playwright testy)
+│   └── e2e/                                # (rezervované pre Playwright testy v TM 2.1)
 │
 ├── frontend/                              # React aplikácia
 │
@@ -156,10 +156,6 @@ task-manager-2.0/
 - Konzolová verzia testovaná manuálne (CRUD cez terminál)
 
 - API testované manuálne cez Postman kolekciu
-
-- Automatické pytest testy pre backend (2 verzie)
-
-- E2E testovanie cez Playwright (pripravuje sa)
 
 ---
 
