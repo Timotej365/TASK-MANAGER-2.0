@@ -34,4 +34,5 @@ Version 2.0 is an advanced task manager project that connects a console applicat
 
 ```bash
 python src/task_manager_1_1_pre_mockup.py
+```
 
